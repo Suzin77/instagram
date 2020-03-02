@@ -7,25 +7,20 @@
             <img class="rounded-circle p-3" src="/img/green-profile.png" style="max-height: 200px">
         </div>
         <div class="col-9 p-5">
-            <div><h1>freeCodeCamp</h1></div>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{$user->username}}</h1>
+                <a href="">Add new Post</a>
+            </div>
             <div class="d-flex">
                 <div class="pr-4"><strong>153</strong> posts</div>
                 <div class="pr-4"><strong>23k</strong> followers</div>
                 <div class="pr-4"><strong>212</strong> follows</div>
             </div>
-            <div class="pt-4 font-weight-bold">freeCloseOrg</div>
+            <div class="pt-4 font-weight-bold">{{$user->profile->title}}</div>
             <div>
-                Lorem ipsum – tekst składający się z łacińskich i quasi-łacińskich wyrazów, mający korzenie w klasycznej łacinie,
-                wzorowany na fragmencie traktatu Cycerona „O granicach dobra i zła” (De finibus bonorum et malorum)
-                napisanego w 45 p.n.e. Tekst jest stosowany do demonstracji krojów pisma (czcionek, fontów), kompozycji kolumny itp.
-                Po raz pierwszy został użyty przez nieznanego drukarza w XVI wieku.
-                Tekst w obcym języku pozwala skoncentrować uwagę na wizualnych aspektach tekstu, a nie jego znaczeniu.
-                W łacinie niektóre z często występujących w językach nowożytnych liter używane były sporadycznie (k, z),
-                bądź nie było ich wcale (w), stąd niektóre wariacje tego tekstu mogą zawierać także wyrazy z tymi literami,
-                aby również i one były zademonstrowane.
-                Fragment używany do demonstracji tekstu:lorem lorem  lorem
+                {{$user->profile->description}}
             </div>
-            <div><a href="https://lin-q.pl" target="_blank">lin-q.pl</a></div>
+            <div><a href="https://lin-q.pl" target="_blank">{{$user->profile->url}}</a></div>
         </div>
     </div>
 
