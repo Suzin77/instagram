@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Posts;
+use App\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -46,4 +47,5 @@ class PostsController extends Controller
         //dd($post);
         return view('posts.show', compact('post'));
     }
+
 }
