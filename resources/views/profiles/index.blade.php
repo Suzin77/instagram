@@ -4,20 +4,17 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-{{--            <img class="rounded-circle p-3" src="{{"/storage/".$user->profile->image ?? "img/default-profile.png"}}" style="max-height: 200px">--}}
-            @if($user->profile->image)
-                <img class="rounded-circle p-3 w-100" src="/storage/{{$user->profile->image }}">
-            @else
-                <img class="rounded-circle p-3 w-100" src="/img/default-profile.png" >
-            @endif
-
+            <img class="rounded-circle p-3 w-100" src="{{$user->profile->profileImage()}}">
         </div>
         <div class="col-9 p-5">
             <div class="d-flex justify-content-between align-items-baseline">
-                <h1>{{$user->username}}</h1>
-            @can('update',$user->profile)
-                <a href="/p/create">Add new Post</a>
-            @endcan
+                <div class="d-flex align-items-center pb-2">
+                    <div class="h3">{{$user->username}}</div>
+                    <button class="btn btn-primary btn-sm ml-2">Follow</button>
+                </div>
+                @can('update',$user->profile)
+                    <a href="/p/create">Add new Post</a>
+                @endcan
             </div>
             <div class="" style="border-bottom: 1px solid #1b1e21"></div>
             <div class="pt-1">
